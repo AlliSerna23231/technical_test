@@ -18,5 +18,4 @@ export class Exercise extends BaseColumns {
 
   @ManyToOne(() => TrainingPlan, trainingPlan => trainingPlan.exercises, { onDelete: 'CASCADE' })
   trainingPlan: TrainingPlan;
-}
-
+} 

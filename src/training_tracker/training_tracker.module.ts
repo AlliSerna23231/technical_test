@@ -5,12 +5,14 @@ import { TrainingTrackerController } from './training_tracker.controller';
 import { TrainingPlan } from './entities/training-plans.entity';
 import { Exercise } from './entities/exercise.entity';
 import { ScheduledTraining } from './entities/scheduled-training.entity';
+import { TrainingCronService } from './training-cron.service';  
+
 
 @Module({
   imports: [
     TypeOrmModule.forFeature([TrainingPlan, Exercise, ScheduledTraining]), 
   ],
   controllers: [TrainingTrackerController],
-  providers: [TrainingTrackerService],
+  providers: [TrainingTrackerService, TrainingCronService],
 })
 export class TrainingTrackerModule {}

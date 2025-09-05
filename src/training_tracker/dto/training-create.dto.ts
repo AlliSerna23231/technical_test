@@ -22,13 +22,13 @@ export class CreateTrainingPlanDto {
   })
   description: string;
 
+  @ApiProperty({
+    type: [ExerciseDto],
+    description: 'Lista de ejercicios que forman parte del plan',
+  })
   @IsArray()
   @ValidateNested({ each: true })
   @Type(() => ExerciseDto)
-  @ApiProperty({
-    name: 'exercises',
-    type: ExerciseDto,
-    required: false
-  })
   exercises: ExerciseDto[];
+
 }

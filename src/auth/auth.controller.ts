@@ -10,7 +10,6 @@ import { AuthGuard } from '@nestjs/passport';
 export class AuthController {
   constructor(private readonly authService: AuthService) {}
 
-  @UseGuards(AuthGuard('jwt')) 
   @Post('/auth-register')
   @ApiOperation({ summary: 'Registrar un nuevo usuario' })
   @ApiResponse({ status: 201, description: 'Usuario registrado correctamente' })
@@ -19,7 +18,6 @@ export class AuthController {
     return { id: user.id, email: user.email, name: user.name };
   }
 
-  @UseGuards(AuthGuard('jwt')) 
   @Post('auth-login')
   @ApiOperation({ summary: 'Iniciar sesión y obtener JWT' })
   @ApiResponse({ status: 200, description: 'Login exitoso con token' })

@@ -18,13 +18,12 @@
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
-    "typeorm": "ts-node ./node_modules/typeorm/cli.js",
-    "migration:run": "npm run typeorm migration:run -- -d database/data-source.ts",
-    "migration:generate": "npm run typeorm -- -d database/data-source.ts migration:generate",
+    "typeorm": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js",
+    "migration:run": "npm run typeorm migration:run -- -d ./database/data-source.ts",
+    "migration:generate": "npm run typeorm -- -d ./database/data-source.ts migration:generate",
     "migration:create": "npm run typeorm migration:create",
-    "migration:revert": "npm run typeorm -- -d database/data-source.ts migration:revert",
-    "migration:show": "npm run typeorm -- -d database/data-source.ts migration:show"
-
+    "migration:revert": "npm run typeorm -- -d ./database/data-source.ts migration:revert",
+    "migration:show": "npm run typeorm -- -d ./database/data-source.ts migration:show"
   },
   "dependencies": {
     "@nestjs/common": "^10.0.0",
@@ -39,6 +38,7 @@
     "bcrypt": "^6.0.0",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.14.2",
+    "cron": "^4.3.3",
     "dotenv": "^17.2.2",
     "passport": "^0.7.0",
     "passport-jwt": "^4.0.1",
@@ -50,6 +50,9 @@
     "uuid": "^11.1.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.28.3",
+    "@babel/preset-env": "^7.28.3",
+    "@babel/preset-typescript": "^7.27.1",
     "@nestjs/cli": "^10.0.0",
     "@nestjs/schematics": "^10.0.0",
     "@nestjs/testing": "^10.0.0",
@@ -61,6 +64,7 @@
     "@types/supertest": "^6.0.0",
     "@typescript-eslint/eslint-plugin": "^8.0.0",
     "@typescript-eslint/parser": "^8.0.0",
+    "babel-loader": "^10.0.0",
     "eslint": "^8.0.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.0",

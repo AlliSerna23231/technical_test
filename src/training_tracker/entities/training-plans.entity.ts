@@ -1,8 +1,8 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, OneToMany, CreateDateColumn, UpdateDateColumn } from 'typeorm';
-import { User } from '../../users/entities/user.entity';
+import { Entity, Column, ManyToOne, OneToMany } from 'typeorm';
 import { Exercise } from './exercise.entity';
 import { ScheduledTraining } from './scheduled-training.entity';
 import { BaseColumns } from '../../common/interfaces/base-columns.entity';
+import {User} from '../../users/entities/user.entity'
 
 @Entity('training_plans')
 export class TrainingPlan extends BaseColumns {

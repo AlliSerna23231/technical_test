@@ -55,6 +55,6 @@ Sigue estos pasos para levantar el entorno de desarrollo:
 
 5. Inicia el servidor en modo desarrollo
 
-La API estará disponible en: http://localhost:3000
+La API estará disponible en: http://localhost:3000/api
 
 
